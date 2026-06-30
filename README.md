@@ -4,13 +4,16 @@ A romantic, eco-friendly product analyzer. Scan any product (camera · photo ·
 barcode · name) → reveal its **ingredients, eco-score, and kinder alternatives**
 — with live retail prices and a switch-impact comparison.
 
-Built for the **Runpod Flash Hack Day**. Two Flash tracks at once: a
-**multi-endpoint pipeline** (CPU → GPU) and **real-time inference**.
 
 Endpoint	URL
 cleancart-ocr (GPU)	https://api.runpod.ai/v2/tcr4zjzfmez3hl/runsync
 cleancart-extract (CPU)	https://api.runpod.ai/v2/ogsrl80621i4om/runsync
 cleancart-score (GPU)	https://api.runpod.ai/v2/r67zp9bhz9fp6v/runsync
+
+Built for the **Runpod Flash Hack Day**. Two Flash tracks at once: a
+**multi-endpoint pipeline** (CPU → GPU) and **real-time inference**.
+
+
 
 
 ```
