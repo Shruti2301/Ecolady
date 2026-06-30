@@ -7,16 +7,12 @@ barcode · name) → reveal its **ingredients, eco-score, and kinder alternative
 Try it live : https://worldwide-chemistry-clinic-marsh.trycloudflare.com/
 
 
-Endpoint	URL
-
-cleancart-ocr (GPU)	https://api.runpod.ai/v2/tcr4zjzfmez3hl/runsync
-
-cleancart-extract (CPU)	https://api.runpod.ai/v2/ogsrl80621i4om/runsync
-
-cleancart-score (GPU)	https://api.runpod.ai/v2/r67zp9bhz9fp6v/runsync
-
 Built for the **Runpod Flash Hack Day**. Two Flash tracks at once: a
 **multi-endpoint pipeline** (CPU → GPU) and **real-time inference**.
+
+"Is the data real?" → Yes — OpenFoodFacts for products, Bright Data for live retail prices. No mock data.
+"What does Flash actually do here?" → Three deployed serverless endpoints — GPU OCR, CPU lookup, GPU scoring. Scale to zero between requests.
+"How accurate is the eco-score?" → Blends Nutri-Score, NOVA processing, Eco-Score, an additive hazard list, and an estimated carbon footprint — 8 weighted factors, all shown transparently.
 
 
 
