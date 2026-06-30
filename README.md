@@ -4,6 +4,8 @@ A romantic, eco-friendly product analyzer. Scan any product (camera · photo ·
 barcode · name) → reveal its **ingredients, eco-score, and kinder alternatives**
 — with live retail prices and a switch-impact comparison.
 
+Try it live : https://worldwide-chemistry-clinic-marsh.trycloudflare.com/
+
 
 Endpoint	URL
 
