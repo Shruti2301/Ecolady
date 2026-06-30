@@ -10,11 +10,14 @@ Try it live : https://worldwide-chemistry-clinic-marsh.trycloudflare.com/
 Built for the **Runpod Flash Hack Day**. Two Flash tracks at once: a
 **multi-endpoint pipeline** (CPU → GPU) and **real-time inference**.
 
-"Is the data real?" → Yes — OpenFoodFacts for products, Bright Data for live retail prices. No mock data.
+"Is the data real?" 
+→ Yes — OpenFoodFacts for products, Bright Data for live retail prices. No mock data.
 
-"What does Flash actually do here?" → Three deployed serverless endpoints — GPU OCR, CPU lookup, GPU scoring. Scale to zero between requests.
+"What does Flash actually do here?" 
+→ Three deployed serverless endpoints — GPU OCR, CPU lookup, GPU scoring. Scale to zero between requests.
 
-"How accurate is the eco-score?" → Blends Nutri-Score, NOVA processing, Eco-Score, an additive hazard list, and an estimated carbon footprint — 8 weighted factors, all shown transparently.
+"How accurate is the eco-score?" 
+→ Blends Nutri-Score, NOVA processing, Eco-Score, an additive hazard list, and an estimated carbon footprint — 8 weighted factors, all shown transparently.
 
 
 
