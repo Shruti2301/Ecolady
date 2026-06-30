@@ -1,0 +1,38 @@
+{
+  "products": {
+    "3017620422003": {
+      "code": "3017620422003",
+      "product_name": "Nutella",
+      "brands": "Ferrero",
+      "nutriscore_grade": "e",
+      "nova_group": 4,
+      "ecoscore_grade": "d",
+      "additives_tags": ["en:e322"],
+      "ingredients_text": "Sugar, palm oil, hazelnuts, cocoa, skimmed milk powder, lecithin, vanillin",
+      "categories": "Spreads, Hazelnut spreads",
+      "image_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.3.400.jpg"
+    }
+  },
+  "catalog": [
+    {
+      "code": "0000000000001",
+      "product_name": "Organic Almond Butter (no added sugar)",
+      "brands": "Once Again",
+      "nutriscore_grade": "a",
+      "nova_group": 1,
+      "ecoscore_grade": "b",
+      "ingredients_text": "Dry roasted almonds",
+      "categories": "Spreads, Nut butters"
+    },
+    {
+      "code": "0000000000002",
+      "product_name": "Dark Chocolate Hazelnut Spread (reduced sugar)",
+      "brands": "Nocciolata",
+      "nutriscore_grade": "c",
+      "nova_group": 3,
+      "ecoscore_grade": "c",
+      "ingredients_text": "Hazelnuts, cane sugar, cocoa, sunflower oil",
+      "categories": "Spreads, Hazelnut spreads"
+    }
+  ]
+}

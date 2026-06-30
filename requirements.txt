@@ -1,0 +1,14 @@
+# Local demo orchestrator (no GPU needed)
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.6
+
+# Server-side OCR (accurate, CPU, no PyTorch) — reads product labels
+rapidocr-onnxruntime>=1.3
+pillow>=10.0
+
+# Flash deployment (installed separately on deploy):
+#   pip install runpod-flash
+# GPU endpoints pull these on Flash automatically:
+#   sentence-transformers, numpy   (score endpoint)
+#   easyocr, pillow, numpy         (ocr endpoint — GPU vision model)

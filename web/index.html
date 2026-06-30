@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Verdant · scan consciously, choose beautifully</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div class="leaf-field" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">🌿</span>
+    <div>
+      <h1>Verdant</h1>
+      <p class="motto">scan consciously · choose beautifully</p>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-view="scan" role="tab">Scan</button>
+    <button class="tab" data-view="result" role="tab">Result</button>
+    <button class="tab" data-view="compare" role="tab">Compare</button>
+    <button class="tab" data-view="history" role="tab">History</button>
+    <button class="tab" data-view="favorites" role="tab">Favorites</button>
+  </nav>
+  <div class="topbar-actions">
+    <span class="status-dot" id="apiDot" title="API status"></span>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+  </div>
+</header>
+
+<main>
+  <!-- ============ SCAN VIEW ============ -->
+  <section class="view active" id="view-scan">
+    <div class="hero glass">
+      <h2 class="hero-title">Discover what's really in it.</h2>
+      <p class="hero-sub">Scan any product to reveal its ingredients, eco-impact, and kinder alternatives.</p>
+
+      <div class="input-methods">
+        <button class="method" data-method="camera"><span class="m-ic">📷</span><span>Live camera</span></button>
+        <button class="method" data-method="upload"><span class="m-ic">🖼️</span><span>Upload image</span></button>
+        <button class="method" data-method="barcode"><span class="m-ic">📊</span><span>Barcode</span></button>
+        <button class="method active" data-method="search"><span class="m-ic">🔍</span><span>Search name</span></button>
+      </div>
+
+      <!-- search / barcode input -->
+      <div class="panel-method" id="m-search">
+        <div class="search-row">
+          <input id="queryInput" placeholder="Try ‘Nutella’, ‘shampoo’, or a barcode…" autocomplete="off" />
+          <button id="goBtn" class="btn-primary">Analyze ✨</button>
+        </div>
+        <div class="chips">
+          <span class="chips-label">Try:</span>
+          <button class="chip" data-bc="3017620422003">Nutella</button>
+          <button class="chip" data-bc="5449000000996">Coca-Cola</button>
+          <button class="chip" data-bc="7622300336738">Oreo</button>
+          <button class="chip" data-bc="5053990138654">Pringles</button>
+          <button class="chip good" data-bc="030000010204">Quaker Oats 🌱</button>
+        </div>
+      </div>
+
+      <!-- camera / upload area -->
+      <div class="panel-method hidden" id="m-capture">
+        <video id="cam" autoplay playsinline muted class="capture-surface hidden"></video>
+        <canvas id="canvas" class="hidden"></canvas>
+        <img id="preview" class="capture-surface hidden" alt="captured product" />
+        <div id="dropzone" class="dropzone hidden">
+          <span class="m-ic">🖼️</span>
+          <p>Drop a product photo here or click to choose</p>
+          <input type="file" id="fileInput" accept="image/*" hidden />
+        </div>
+        <div class="capture-actions">
+          <button id="shutterBtn" class="btn-primary hidden">Capture & read 📸</button>
+          <button id="stopCamBtn" class="btn-ghost hidden">Stop camera</button>
+        </div>
+        <div id="ocrStatus" class="ocr-status hidden"></div>
+      </div>
+
+      <!-- barcode reader -->
+      <div class="panel-method hidden" id="m-barcode">
+        <div id="reader"></div>
+      </div>
+    </div>
+
+    <div id="loader" class="loader hidden">
+      <div class="bloom"></div>
+      <p id="loaderText">Reading the label…</p>
+    </div>
+  </section>
+
+  <!-- ============ RESULT VIEW ============ -->
+  <section class="view" id="view-result">
+    <div id="resultEmpty" class="empty glass">Nothing scanned yet — head to <b>Scan</b> to begin. 🌿</div>
+    <div id="resultBody"></div>
+  </section>
+
+  <!-- ============ COMPARE VIEW ============ -->
+  <section class="view" id="view-compare">
+    <div id="compareBody" class="glass empty">Scan a product, then pick a swap’s <b>Compare</b> button to see the impact of switching. 🍃</div>
+  </section>
+
+  <!-- ============ HISTORY VIEW ============ -->
+  <section class="view" id="view-history">
+    <h2 class="view-title">Scan history</h2>
+    <div id="historyGrid" class="card-grid"></div>
+  </section>
+
+  <!-- ============ FAVORITES VIEW ============ -->
+  <section class="view" id="view-favorites">
+    <h2 class="view-title">Favorite eco-friendly picks 💚</h2>
+    <div id="favGrid" class="card-grid"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Verdant · Runpod Flash <span class="sep">·</span> Bright Data <span class="sep">·</span> OpenFoodFacts</span>
+  <span class="flow">CPU <code>extract</code> → GPU <code>score</code> → live price</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
