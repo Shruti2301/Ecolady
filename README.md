@@ -7,8 +7,9 @@ barcode · name) → reveal its **ingredients, eco-score, and kinder alternative
 Try it live : https://worldwide-chemistry-clinic-marsh.trycloudflare.com/
 
 
-Built for the **Runpod Flash Hack Day**. Two Flash tracks at once: a
-**multi-endpoint pipeline** (CPU → GPU) and **real-time inference**.
+Under the hood, Verdant is a multi-endpoint Runpod Flash pipeline — three serverless endpoints, deployed live. OCR runs on a GPU. A lightweight CPU endpoint identifies the product — and it scales to zero when idle, so it costs nothing between scans. Then a second GPU endpoint runs embeddings to rank the alternatives by meaning, not just keywords.
+
+That's CPU preprocessing feeding GPU inference — Flash as a real orchestration layer, not just a deployment shortcut. And I got here by writing plain Python functions and running one command — flash deploy. No Docker, no rebuild cycles.
 
 "Is the data real?" 
 
