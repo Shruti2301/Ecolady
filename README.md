@@ -4,9 +4,8 @@ A romantic, eco-friendly product analyzer. Scan any product (camera · photo ·
 barcode · name) → reveal its **ingredients, eco-score, and kinder alternatives**
 — with live retail prices and a switch-impact comparison.
 
-Try it live : https://worldwide-chemistry-clinic-marsh.trycloudflare.com/
 
-Demo Video :  https://hel1.your-objectstorage.com/hackersquadcontent/project-recordings/project_rec_cmr18jhh300hfpm0kaaij4kqg-2026-06-30T225213.mp4
+Demo Video:  https://hel1.your-objectstorage.com/hackersquadcontent/project-recordings/project_rec_cmr18jhh300hfpm0kaaij4kqg-2026-06-30T225213.mp4
 
 
 Under the hood, Verdant is a multi-endpoint Runpod Flash pipeline — three serverless endpoints, deployed live. OCR runs on a GPU. A lightweight CPU endpoint identifies the product — and it scales to zero when idle, so it costs nothing between scans. Then a second GPU endpoint runs embeddings to rank the alternatives by meaning, not just keywords.
